@@ -1,0 +1,8 @@
+# Keep the files byte-identical on every machine.
+# This matters: the shell script and the Dockerfile must keep Unix (LF) line
+# endings, otherwise entrypoint.sh fails inside the container with
+#   /bin/bash^M: bad interpreter: No such file or directory
+* text=auto eol=lf
+*.sh text eol=lf
+Dockerfile text eol=lf
+*.md text eol=lf

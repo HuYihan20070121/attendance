@@ -1,0 +1,13 @@
+# Render Blueprint —— 一键创建 Web Service
+# 用法：仓库里放好这个文件后，打开 https://dashboard.render.com/blueprints
+#       → New Blueprint Instance → 选本仓库，服务名/区域/免费计划都会自动填好。
+services:
+  - type: web
+    name: attend95584
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /attendance/
+    autoDeployTrigger: commit
